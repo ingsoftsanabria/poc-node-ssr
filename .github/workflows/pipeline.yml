@@ -18,15 +18,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
+    #strategy:
+    #  matrix:
+    #    node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        #with:
-        #  cache: 'npm'
+        with:
+          node-version: 18.x
+          cache: 'npm'
       - run: npm i --no-fund --no-audit
       #- run: npm run lint
       #- run: npm run test
